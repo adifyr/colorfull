@@ -42,7 +42,7 @@ extension ColorUtils on Color {
 
   /// Returns the RGBA values for this color in the order: (red, green, blue, alpha).
   ///
-  /// Values for RGBA will be in the range of 0-255. Example: ()
+  /// RGBA values will be in the range of 0-255. Example: (242, 90, 120, 255) (Rose Red C-350)
   (int, int, int, int) getRGBA() {
     return ((r * 255).round() & 0xff, (g * 255).round() & 0xff, (b * 255).round() & 0xff, (a * 255).round() & 0xff);
   }
