@@ -7,8 +7,9 @@
 - 🌈 **12,000 Colors**: Every possible combination of 30 hues, 20 saturations, and 20 lightness levels.
 - 🔎 **Global Constants**: All colors are available as named Dart constants — no need to calculate or convert.
 - 🎨 **Consistent Naming**: Colors are organized and named for easy lookup and autocompletion.
-- ⚡ **Zero Dependencies**: Pure Dart/Flutter, no external dependencies.
+- ⚡️ **Zero Dependencies**: Pure Dart/Flutter, no external dependencies.
 - 🖼️ **Perfect for Design Systems**: Build beautiful, consistent UIs with fine-grained color control.
+- 🌳 **Highly Tree-Shakeable**: Only the colors you use are included in your final app build, keeping your app size minimal.
 
 ## Getting Started
 
@@ -27,7 +28,7 @@ flutter pub get
 
 ## Usage
 
-Import the package and use any color constant:
+Import the package and use any color constant. You also get helpful extensions for working with colors:
 
 ```dart
 import 'package:colorfull/colorfull.dart';
@@ -41,6 +42,11 @@ Container(
 
 // Example: Use a specific hue, saturation, and lightness
 Text('Dodger Blue A-300', style: TextStyle(color: dodgerBlueA300))
+
+// Use the ColorUtils extension methods:
+final rgba = redK400.getRGBA(); // (R, G, B, A) tuple
+final hex = amberH600.getHex(); // '#A38B29' String
+final faded = blueP350 * 0.5;   // Color with 50% opacity
 ```
 
 All colors are available as constants like `limeGreen`, `pumpkinOrange150`, `redA400`, `cyanQ750`, etc. See the API reference on [pub.dev](https://pub.dev/documentation/colorfull/latest) for the full list.
