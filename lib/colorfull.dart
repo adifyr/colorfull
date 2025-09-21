@@ -30,6 +30,7 @@ export 'colors/magenta.dart';
 export 'colors/pink.dart';
 export 'colors/rose.dart';
 export 'colors/rose_red.dart';
+export 'colors/grey.dart';
 
 extension ColorUtils on Color {
   Color operator *(final double alpha) => withValues(alpha: alpha);
