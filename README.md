@@ -1,6 +1,8 @@
-# ColorFull
+# Colorfull
 
-**ColorFull** is a Flutter package that gives developers access to the full range of 12,000 HSL-based colors—making it easy to use precise colors in your apps. With 30 hues × 20 saturation levels × 20 lightness levels, every color is exposed as a global constant for fast, type-safe access.
+**Colorfull** was created to solve a major limitation in popular design systems like Tailwind and Material Design: their color palettes are simply too small. There is no quick and easy way to access a large range of colors directly, making it difficult to build themes and design systems with true creative freedom.
+
+Colorfull solves this by giving Flutter developers direct, instant access to 12,000 colors derived from the HSL color wheel — covering 30 hues × 20 saturation levels × 20 lightness levels. Every color is exposed as a global constant for fast, type-safe access, making it easy to build beautiful, consistent UIs with complete flexibility.
 
 ## Features
 
@@ -28,7 +30,9 @@ flutter pub get
 
 ## Usage
 
-Import the package and use any color constant. You also get helpful extensions for working with colors:
+### Color Palette
+
+Import the package and use any color constant.
 
 ```dart
 import 'package:colorfull/colorfull.dart';
@@ -37,12 +41,18 @@ import 'package:colorfull/colorfull.dart';
 Container(
   color: indigo650, // Or any other color constant
   padding: const EdgeInsets.all(16.0),
-  child: Text('Hello ColorFull!', style: TextStyle(color: Colors.white)),
+  child: Text('Hello ColorFull!', style: TextStyle(color: white)),
 );
 
 // Example: Use a specific hue, saturation, and lightness
-Text('Dodger Blue A-300', style: TextStyle(color: dodgerBlueA300))
+Text('Dodger Blue A-300', style: TextStyle(color: dodgerBlueA300));
+```
 
+### Color Extensions
+
+You also get helpful extensions for working with colors:
+
+```dart
 // Use the ColorUtils extension methods:
 final rgba = redK400.getRGBA(); // (R, G, B, A) tuple
 final hex = amberH600.getHex(); // '#A38B29' String
