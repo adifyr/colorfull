@@ -1,8 +1,10 @@
+![Colorfull Logo](assets/logo.png)
+
 # Colorfull
 
-**Colorfull** was created to solve a major limitation in popular design systems like Tailwind and Material Design: their color palettes are simply too small. There is no quick and easy way to access a large range of colors directly, making it difficult to build themes and design systems with true creative freedom.
+**Colorfull** was created to solve a major limitation in popular design systems like Tailwind Color and Material Design: their color palettes are simply too small. There is no quick and easy way to access a large range of colors directly, making it difficult to build themes and design systems with true creative freedom.
 
-Colorfull solves this by giving Flutter developers direct, instant access to 12,000 colors derived from the HSL color wheel — covering 30 hues × 20 saturation levels × 20 lightness levels. Every color is exposed as a global constant for fast, type-safe access, making it easy to build beautiful, consistent UIs with complete flexibility.
+Colorfull solves this by giving Flutter developers direct, instant access to 12,000 colors derived from the HSL color wheel - covering 30 hues × 20 saturation levels × 20 lightness levels. Every color is exposed as a global constant for fast, type-safe access, making it easy to build beautiful, consistent UIs with complete flexibility.
 
 ## Features
 
@@ -50,7 +52,7 @@ Text('Dodger Blue A-300', style: TextStyle(color: dodgerBlueA300));
 
 ### Color Extensions
 
-You also get helpful extensions for working with colors:
+The library also provides helpful extensions for working with colors:
 
 ```dart
 // Use the ColorUtils extension methods:
