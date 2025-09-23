@@ -49,8 +49,8 @@ void main() {
   }
   final greyFile = File('lib/colors/grey.dart');
   greyFile.writeAsStringSync("import 'package:flutter/services.dart';\n", mode: mode);
-  writeColorToFile(greyFile, 0, 0, 'Grey', 'grey');
-  writeColorToFile(greyFile, 0, 0, 'Gray', 'gray');
+  writeColorToFile(greyFile, 0, 20, 'Grey', 'grey');
+  writeColorToFile(greyFile, 0, 20, 'Gray', 'gray');
 
   final whiteFile = File('lib/colors/white.dart');
   whiteFile.writeAsStringSync("import 'package:flutter/services.dart';\n", mode: mode);
@@ -58,11 +58,16 @@ void main() {
   final blackFile = File('lib/colors/black.dart');
   blackFile.writeAsStringSync("import 'package:flutter/services.dart';\n", mode: mode);
   for (int a = 5; a < 100; a += 5) {
-    final whiteAlpha = Color.fromRGBO(255, 255, 255, a / 100).toARGB32().toRadixString(16).substring(0, 2);
+    final whiteAlpha = Color.fromRGBO(
+      255,
+      255,
+      255,
+      a / 100,
+    ).toARGB32().toRadixString(16).padLeft(8, '0').substring(0, 2);
     whiteFile.writeAsStringSync('\n/// White - $a% Opacity.\n', mode: mode);
     whiteFile.writeAsStringSync('const white$a = Color(0x${whiteAlpha}FFFFFF);\n', mode: mode);
 
-    final blackAlpha = Color.fromRGBO(0, 0, 0, a / 100).toARGB32().toRadixString(16).substring(0, 2);
+    final blackAlpha = Color.fromRGBO(0, 0, 0, a / 100).toARGB32().toRadixString(16).padLeft(8, '0').substring(0, 2);
     blackFile.writeAsStringSync('\n/// Black - $a% Opacity.\n', mode: mode);
     blackFile.writeAsStringSync('const black$a = Color(0x${blackAlpha}000000);\n', mode: mode);
   }
@@ -74,7 +79,7 @@ void writeColorToFile(File file, int h, int s, String name, String varName) {
   for (int l = 5; l < 100; l += 5) {
     final color = HSLColor.fromAHSL(1, h * 12, (20 - s) / 20, (100 - l) / 100).toColor();
     final hex = color.toARGB32().toRadixString(16).substring(2).toUpperCase();
-    final sat = sats[s];
+    final sat = s == 20 ? '' : sats[s];
     file.writeAsStringSync('\n/// $name ${sat.isEmpty ? '' : '$sat-'}${l * 10}. Hex Code: #$hex.\n', mode: mode);
     file.writeAsStringSync('const $varName$sat${l * 10} = Color(0xff$hex);\n', mode: mode);
     if (s == 0 && l == 50) {

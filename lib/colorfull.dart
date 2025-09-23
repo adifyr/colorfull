@@ -11,7 +11,6 @@ export 'colors/dodger_blue.dart';
 export 'colors/bright_green.dart';
 export 'colors/fuschia.dart';
 export 'colors/green.dart';
-export 'colors/grey.dart';
 export 'colors/indigo.dart';
 export 'colors/light_green.dart';
 export 'colors/lime.dart';
@@ -31,6 +30,9 @@ export 'colors/sports_green.dart';
 export 'colors/spring_green.dart';
 export 'colors/violet.dart';
 export 'colors/yellow.dart';
+export 'colors/grey.dart';
+export 'colors/white.dart';
+export 'colors/black.dart';
 
 extension ColorUtils on Color {
   /// Returns a new color with the specified [opacity].
@@ -51,6 +53,6 @@ extension ColorUtils on Color {
   ///
   /// If [includeHash] is 'true', the Hex Code will be prefixed by "#". [includeHash] is 'true' by default.
   String getHex([bool includeHash = true]) {
-    return '${includeHash ? '#' : ''}${toARGB32().toRadixString(16).substring(2).toUpperCase()}';
+    return '${includeHash ? '#' : ''}${toARGB32().toRadixString(16).padLeft(8, '0').substring(2).toUpperCase()}';
   }
 }
