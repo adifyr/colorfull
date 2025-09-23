@@ -50,18 +50,18 @@ Container(
 Text('Dodger Blue A-300', style: TextStyle(color: dodgerBlueA300));
 ```
 
+All colors are available as constants like `limeGreen`, `pumpkinOrange150`, `redA400`, `cyanQ750`, etc. See the API reference on [pub.dev](https://pub.dev/documentation/colorfull/latest) for the full list.
+
 ### Color Extensions
 
 The library also provides helpful extensions for working with colors:
 
 ```dart
 // Use the ColorUtils extension methods:
-final rgba = redK400.getRGBA(); // (R, G, B, A) tuple
+final rgba = redK400.getRGBA(); // (r: 199, g: 107, b: 107, a: 255) Tuple
 final hex = amberH600.getHex(); // '#A38B29' String
-final faded = blueP350 * 0.5;   // Color with 50% opacity
+final faded = blueP350 * 0.5;   // Color (Blue P-350) with 50% opacity
 ```
-
-All colors are available as constants like `limeGreen`, `pumpkinOrange150`, `redA400`, `cyanQ750`, etc. See the API reference on [pub.dev](https://pub.dev/documentation/colorfull/latest) for the full list.
 
 ## Additional Information
 
