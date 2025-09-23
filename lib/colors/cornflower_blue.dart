@@ -30,7 +30,7 @@ const cornflowerBlue450 = Color(0xff1A75FF);
 /// Cornflower Blue 500. Hex Code: #0066FF.
 const cornflowerBlue500 = Color(0xff0066FF);
 
-/// Convenient shorthand for "Cornflower Blue 500" - since it is the base color.
+/// Shorthand for [cornflowerBlue500], since it is the base color.
 ///
 /// Hex Code: #0066FF.
 const cornflowerBlue = cornflowerBlue500;

@@ -30,7 +30,7 @@ const magenta450 = Color(0xffFF1AD1);
 /// Magenta 500. Hex Code: #FF00CC.
 const magenta500 = Color(0xffFF00CC);
 
-/// Convenient shorthand for "Magenta 500" - since it is the base color.
+/// Shorthand for [magenta500], since it is the base color.
 ///
 /// Hex Code: #FF00CC.
 const magenta = magenta500;

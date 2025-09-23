@@ -30,7 +30,7 @@ const violet450 = Color(0xffA31AFF);
 /// Violet 500. Hex Code: #9900FF.
 const violet500 = Color(0xff9900FF);
 
-/// Convenient shorthand for "Violet 500" - since it is the base color.
+/// Shorthand for [violet500], since it is the base color.
 ///
 /// Hex Code: #9900FF.
 const violet = violet500;

@@ -30,7 +30,7 @@ const neonGreen450 = Color(0xff47FF1A);
 /// Neon Green 500. Hex Code: #33FF00.
 const neonGreen500 = Color(0xff33FF00);
 
-/// Convenient shorthand for "Neon Green 500" - since it is the base color.
+/// Shorthand for [neonGreen500], since it is the base color.
 ///
 /// Hex Code: #33FF00.
 const neonGreen = neonGreen500;

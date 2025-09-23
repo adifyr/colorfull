@@ -30,7 +30,7 @@ const skyBlue450 = Color(0xff1AD1FF);
 /// Sky Blue 500. Hex Code: #00CCFF.
 const skyBlue500 = Color(0xff00CCFF);
 
-/// Convenient shorthand for "Sky Blue 500" - since it is the base color.
+/// Shorthand for [skyBlue500], since it is the base color.
 ///
 /// Hex Code: #00CCFF.
 const skyBlue = skyBlue500;

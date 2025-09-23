@@ -30,7 +30,7 @@ const sportsGreen450 = Color(0xff1AFFA3);
 /// Sports Green 500. Hex Code: #00FF99.
 const sportsGreen500 = Color(0xff00FF99);
 
-/// Convenient shorthand for "Sports Green 500" - since it is the base color.
+/// Shorthand for [sportsGreen500], since it is the base color.
 ///
 /// Hex Code: #00FF99.
 const sportsGreen = sportsGreen500;

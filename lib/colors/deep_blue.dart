@@ -30,7 +30,7 @@ const deepBlue450 = Color(0xff471AFF);
 /// Deep Blue 500. Hex Code: #3300FF.
 const deepBlue500 = Color(0xff3300FF);
 
-/// Convenient shorthand for "Deep Blue 500" - since it is the base color.
+/// Shorthand for [deepBlue500], since it is the base color.
 ///
 /// Hex Code: #3300FF.
 const deepBlue = deepBlue500;

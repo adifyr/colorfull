@@ -30,7 +30,7 @@ const cyan450 = Color(0xff1AFFFF);
 /// Cyan 500. Hex Code: #00FFFF.
 const cyan500 = Color(0xff00FFFF);
 
-/// Convenient shorthand for "Cyan 500" - since it is the base color.
+/// Shorthand for [cyan500], since it is the base color.
 ///
 /// Hex Code: #00FFFF.
 const cyan = cyan500;

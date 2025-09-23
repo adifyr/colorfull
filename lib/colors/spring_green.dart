@@ -30,7 +30,7 @@ const springGreen450 = Color(0xff1AFF75);
 /// Spring Green 500. Hex Code: #00FF66.
 const springGreen500 = Color(0xff00FF66);
 
-/// Convenient shorthand for "Spring Green 500" - since it is the base color.
+/// Shorthand for [springGreen500], since it is the base color.
 ///
 /// Hex Code: #00FF66.
 const springGreen = springGreen500;

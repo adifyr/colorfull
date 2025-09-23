@@ -30,7 +30,7 @@ const roseRed450 = Color(0xffFF1A47);
 /// Rose Red 500. Hex Code: #FF0033.
 const roseRed500 = Color(0xffFF0033);
 
-/// Convenient shorthand for "Rose Red 500" - since it is the base color.
+/// Shorthand for [roseRed500], since it is the base color.
 ///
 /// Hex Code: #FF0033.
 const roseRed = roseRed500;

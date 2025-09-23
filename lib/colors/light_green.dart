@@ -30,7 +30,7 @@ const lightGreen450 = Color(0xff1AFF47);
 /// Light Green 500. Hex Code: #00FF33.
 const lightGreen500 = Color(0xff00FF33);
 
-/// Convenient shorthand for "Light Green 500" - since it is the base color.
+/// Shorthand for [lightGreen500], since it is the base color.
 ///
 /// Hex Code: #00FF33.
 const lightGreen = lightGreen500;

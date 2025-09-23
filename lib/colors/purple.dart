@@ -30,7 +30,7 @@ const purple450 = Color(0xffD11AFF);
 /// Purple 500. Hex Code: #CC00FF.
 const purple500 = Color(0xffCC00FF);
 
-/// Convenient shorthand for "Purple 500" - since it is the base color.
+/// Shorthand for [purple500], since it is the base color.
 ///
 /// Hex Code: #CC00FF.
 const purple = purple500;

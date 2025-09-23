@@ -30,7 +30,7 @@ const yellow450 = Color(0xffFFFF1A);
 /// Yellow 500. Hex Code: #FFFF00.
 const yellow500 = Color(0xffFFFF00);
 
-/// Convenient shorthand for "Yellow 500" - since it is the base color.
+/// Shorthand for [yellow500], since it is the base color.
 ///
 /// Hex Code: #FFFF00.
 const yellow = yellow500;

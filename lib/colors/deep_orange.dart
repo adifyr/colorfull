@@ -30,7 +30,7 @@ const deepOrange450 = Color(0xffFF471A);
 /// Deep Orange 500. Hex Code: #FF3300.
 const deepOrange500 = Color(0xffFF3300);
 
-/// Convenient shorthand for "Deep Orange 500" - since it is the base color.
+/// Shorthand for [deepOrange500], since it is the base color.
 ///
 /// Hex Code: #FF3300.
 const deepOrange = deepOrange500;

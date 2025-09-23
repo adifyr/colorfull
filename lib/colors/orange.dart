@@ -30,7 +30,7 @@ const orange450 = Color(0xffFFA31A);
 /// Orange 500. Hex Code: #FF9900.
 const orange500 = Color(0xffFF9900);
 
-/// Convenient shorthand for "Orange 500" - since it is the base color.
+/// Shorthand for [orange500], since it is the base color.
 ///
 /// Hex Code: #FF9900.
 const orange = orange500;

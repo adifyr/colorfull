@@ -30,7 +30,7 @@ const amber450 = Color(0xffFFD11A);
 /// Amber 500. Hex Code: #FFCC00.
 const amber500 = Color(0xffFFCC00);
 
-/// Convenient shorthand for "Amber 500" - since it is the base color.
+/// Shorthand for [amber500], since it is the base color.
 ///
 /// Hex Code: #FFCC00.
 const amber = amber500;

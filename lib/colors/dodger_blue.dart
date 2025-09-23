@@ -30,7 +30,7 @@ const dodgerBlue450 = Color(0xff1AA3FF);
 /// Dodger Blue 500. Hex Code: #0099FF.
 const dodgerBlue500 = Color(0xff0099FF);
 
-/// Convenient shorthand for "Dodger Blue 500" - since it is the base color.
+/// Shorthand for [dodgerBlue500], since it is the base color.
 ///
 /// Hex Code: #0099FF.
 const dodgerBlue = dodgerBlue500;

@@ -30,7 +30,7 @@ const pink450 = Color(0xffFF1AA3);
 /// Pink 500. Hex Code: #FF0099.
 const pink500 = Color(0xffFF0099);
 
-/// Convenient shorthand for "Pink 500" - since it is the base color.
+/// Shorthand for [pink500], since it is the base color.
 ///
 /// Hex Code: #FF0099.
 const pink = pink500;

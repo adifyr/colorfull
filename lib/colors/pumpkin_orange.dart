@@ -30,7 +30,7 @@ const pumpkinOrange450 = Color(0xffFF751A);
 /// Pumpkin Orange 500. Hex Code: #FF6600.
 const pumpkinOrange500 = Color(0xffFF6600);
 
-/// Convenient shorthand for "Pumpkin Orange 500" - since it is the base color.
+/// Shorthand for [pumpkinOrange500], since it is the base color.
 ///
 /// Hex Code: #FF6600.
 const pumpkinOrange = pumpkinOrange500;

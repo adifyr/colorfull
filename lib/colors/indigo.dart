@@ -30,7 +30,7 @@ const indigo450 = Color(0xff751AFF);
 /// Indigo 500. Hex Code: #6600FF.
 const indigo500 = Color(0xff6600FF);
 
-/// Convenient shorthand for "Indigo 500" - since it is the base color.
+/// Shorthand for [indigo500], since it is the base color.
 ///
 /// Hex Code: #6600FF.
 const indigo = indigo500;

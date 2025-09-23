@@ -30,7 +30,7 @@ const blue450 = Color(0xff1A1AFF);
 /// Blue 500. Hex Code: #0000FF.
 const blue500 = Color(0xff0000FF);
 
-/// Convenient shorthand for "Blue 500" - since it is the base color.
+/// Shorthand for [blue500], since it is the base color.
 ///
 /// Hex Code: #0000FF.
 const blue = blue500;

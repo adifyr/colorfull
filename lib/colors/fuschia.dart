@@ -30,7 +30,7 @@ const fuschia450 = Color(0xffFF1AFF);
 /// Fuschia 500. Hex Code: #FF00FF.
 const fuschia500 = Color(0xffFF00FF);
 
-/// Convenient shorthand for "Fuschia 500" - since it is the base color.
+/// Shorthand for [fuschia500], since it is the base color.
 ///
 /// Hex Code: #FF00FF.
 const fuschia = fuschia500;

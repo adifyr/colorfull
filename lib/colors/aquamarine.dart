@@ -30,7 +30,7 @@ const aquamarine450 = Color(0xff1AFFD1);
 /// Aquamarine 500. Hex Code: #00FFCC.
 const aquamarine500 = Color(0xff00FFCC);
 
-/// Convenient shorthand for "Aquamarine 500" - since it is the base color.
+/// Shorthand for [aquamarine500], since it is the base color.
 ///
 /// Hex Code: #00FFCC.
 const aquamarine = aquamarine500;

@@ -30,7 +30,7 @@ const lime450 = Color(0xffD1FF1A);
 /// Lime 500. Hex Code: #CCFF00.
 const lime500 = Color(0xffCCFF00);
 
-/// Convenient shorthand for "Lime 500" - since it is the base color.
+/// Shorthand for [lime500], since it is the base color.
 ///
 /// Hex Code: #CCFF00.
 const lime = lime500;

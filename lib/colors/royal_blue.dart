@@ -30,7 +30,7 @@ const royalBlue450 = Color(0xff1A47FF);
 /// Royal Blue 500. Hex Code: #0033FF.
 const royalBlue500 = Color(0xff0033FF);
 
-/// Convenient shorthand for "Royal Blue 500" - since it is the base color.
+/// Shorthand for [royalBlue500], since it is the base color.
 ///
 /// Hex Code: #0033FF.
 const royalBlue = royalBlue500;
