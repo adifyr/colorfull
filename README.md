@@ -1,4 +1,4 @@
-<p align="center"><img src="assets/logo.png" height="120"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/adifyr/colorfull/refs/heads/main/assets/logo.png" height="120"></p>
 
 # Colorfull
 
@@ -8,7 +8,7 @@ Colorfull solves this by giving Flutter developers direct, instant access to the
 
 ### Infographic
 
-<p align="center"><img src="assets/system.png"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/adifyr/colorfull/refs/heads/main/assets/system.png"></p>
 
 ## Features
 
