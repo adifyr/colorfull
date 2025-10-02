@@ -6,8 +6,6 @@
 
 Colorfull solves this by giving Flutter developers direct, instant access to the full palette of 11,421 colors derived from the HSL color wheel — covering 30 base hues × 20 saturation levels × 19 lightness levels + 19 shades of grey + black and white. Every color is exposed as a global constant for fast, type-safe access — making it easy to build beautiful, consistent UIs with complete flexibility.
 
-### Infographic
-
 <p align="center"><img src="https://raw.githubusercontent.com/adifyr/colorfull/refs/heads/main/assets/system.png"></p>
 
 ## Features
@@ -18,21 +16,6 @@ Colorfull solves this by giving Flutter developers direct, instant access to the
 - ⚡️ **Zero Dependencies**: Pure Dart/Flutter, no external dependencies.
 - 🖼️ **Perfect for Design Systems**: Build beautiful, consistent UIs with fine-grained color control.
 - 🌳 **Highly Tree-Shakeable**: Only the colors you use are included in your final app build, keeping your app size minimal.
-
-## Getting Started
-
-Add ColorFull to your `pubspec.yaml`:
-
-```yaml
-dependencies:
-  colorfull: ^1.0.0
-```
-
-Then run:
-
-```sh
-flutter pub get
-```
 
 ## Usage
 
