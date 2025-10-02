@@ -46,7 +46,12 @@ extension ColorUtils on Color {
   ///
   /// RGBA values will be in the range of 0-255. Example: (242, 90, 120, 255)
   (int, int, int, int) getRGBA() {
-    return ((r * 255).round() & 0xff, (g * 255).round() & 0xff, (b * 255).round() & 0xff, (a * 255).round() & 0xff);
+    return (
+      (r * 255).round() & 0xff,
+      (g * 255).round() & 0xff,
+      (b * 255).round() & 0xff,
+      (a * 255).round() & 0xff,
+    );
   }
 
   /// Returns the Hex Code [String] for this color. Example: #A38B29.

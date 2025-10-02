@@ -1,3 +1,7 @@
+# 1.0.3
+
+- Updated `colorfull.dart` to fit dart formatting coventions.
+
 # 1.0.2
 
 - Removed unnecessary install instructions from README.md
