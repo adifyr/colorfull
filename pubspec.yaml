@@ -1,7 +1,7 @@
 name: colorfull
-description: "A new Flutter package project."
+description: "The full palette of HSL Colors available as constants for Flutter"
 version: 1.0.0
-homepage: Github
+homepage: https://github.com/adifyr/colorfull
 
 environment:
   sdk: ^3.9.2
