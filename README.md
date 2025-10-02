@@ -43,7 +43,7 @@ import 'package:colorfull/colorfull.dart';
 Container(
   color: indigo650, // Or any other color constant
   padding: const EdgeInsets.all(16.0),
-  child: Text('Hello ColorFull!', style: TextStyle(color: white)),
+  child: Text('Hello Colorfull!', style: TextStyle(color: white)),
 );
 
 // Example: Use a specific hue, saturation, and lightness
