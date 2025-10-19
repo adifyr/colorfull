@@ -1,4 +1,4 @@
-import 'package:flutter/services.dart';
+import 'dart:ui';
 
 /// Pink 50. Hex Code: #FFE5F5.
 const pink50 = Color(0xffFFE5F5);

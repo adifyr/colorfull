@@ -1,4 +1,4 @@
-import 'package:flutter/services.dart';
+import 'dart:ui';
 
 /// Fuschia 50. Hex Code: #FFE5FF.
 const fuschia50 = Color(0xffFFE5FF);

@@ -1,4 +1,4 @@
-import 'package:flutter/services.dart';
+import 'dart:ui';
 
 /// Sky Blue 50. Hex Code: #E5FAFF.
 const skyBlue50 = Color(0xffE5FAFF);

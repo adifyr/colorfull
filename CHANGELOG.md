@@ -1,3 +1,7 @@
+# 1.1.0
+
+- Users can now have swatches
+
 # 1.0.3
 
 - Updated `colorfull.dart` to fit dart formatting coventions.

@@ -1,4 +1,4 @@
-import 'package:flutter/services.dart';
+import 'dart:ui';
 
 /// Indigo 50. Hex Code: #F0E5FF.
 const indigo50 = Color(0xffF0E5FF);

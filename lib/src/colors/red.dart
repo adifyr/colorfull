@@ -1,4 +1,4 @@
-import 'package:flutter/services.dart';
+import 'dart:ui';
 
 /// Red 50. Hex Code: #FFE5E5.
 const red50 = Color(0xffFFE5E5);

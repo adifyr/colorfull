@@ -1,4 +1,4 @@
-import 'package:flutter/services.dart';
+import 'dart:ui';
 
 /// Rose 50. Hex Code: #FFE5F0.
 const rose50 = Color(0xffFFE5F0);

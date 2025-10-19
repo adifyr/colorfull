@@ -1,4 +1,4 @@
-import 'package:flutter/services.dart';
+import 'dart:ui';
 
 /// Royal Blue 50. Hex Code: #E5EBFF.
 const royalBlue50 = Color(0xffE5EBFF);

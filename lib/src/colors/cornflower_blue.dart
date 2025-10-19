@@ -1,4 +1,4 @@
-import 'package:flutter/services.dart';
+import 'dart:ui';
 
 /// Cornflower Blue 50. Hex Code: #E5F0FF.
 const cornflowerBlue50 = Color(0xffE5F0FF);

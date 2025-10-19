@@ -1,4 +1,4 @@
-import 'package:flutter/services.dart';
+import 'dart:ui';
 
 /// Magenta 50. Hex Code: #FFE5FA.
 const magenta50 = Color(0xffFFE5FA);

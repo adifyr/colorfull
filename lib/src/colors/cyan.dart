@@ -1,4 +1,4 @@
-import 'package:flutter/services.dart';
+import 'dart:ui';
 
 /// Cyan 50. Hex Code: #E5FFFF.
 const cyan50 = Color(0xffE5FFFF);

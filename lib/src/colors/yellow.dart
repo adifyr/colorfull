@@ -1,4 +1,4 @@
-import 'package:flutter/services.dart';
+import 'dart:ui';
 
 /// Yellow 50. Hex Code: #FFFFE5.
 const yellow50 = Color(0xffFFFFE5);

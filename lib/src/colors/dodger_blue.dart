@@ -1,4 +1,4 @@
-import 'package:flutter/services.dart';
+import 'dart:ui';
 
 /// Dodger Blue 50. Hex Code: #E5F5FF.
 const dodgerBlue50 = Color(0xffE5F5FF);

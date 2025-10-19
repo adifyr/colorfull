@@ -1,4 +1,4 @@
-import 'package:flutter/services.dart';
+import 'dart:ui';
 
 export 'src/colors/amber.dart';
 export 'src/colors/aquamarine.dart';
@@ -33,6 +33,7 @@ export 'src/colors/spring_green.dart';
 export 'src/colors/violet.dart';
 export 'src/colors/white.dart';
 export 'src/colors/yellow.dart';
+export 'src/swatch.dart';
 
 extension ColorUtils on Color {
   /// Returns a new color with the specified [opacity].

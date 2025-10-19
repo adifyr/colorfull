@@ -1,4 +1,4 @@
-import 'package:flutter/services.dart';
+import 'dart:ui';
 
 /// Aquamarine 50. Hex Code: #E5FFFA.
 const aquamarine50 = Color(0xffE5FFFA);

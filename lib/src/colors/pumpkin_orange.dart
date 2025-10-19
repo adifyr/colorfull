@@ -1,4 +1,4 @@
-import 'package:flutter/services.dart';
+import 'dart:ui';
 
 /// Pumpkin Orange 50. Hex Code: #FFF0E5.
 const pumpkinOrange50 = Color(0xffFFF0E5);

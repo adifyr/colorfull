@@ -1,4 +1,4 @@
-import 'package:flutter/services.dart';
+import 'dart:ui';
 
 /// Spring Green 50. Hex Code: #E5FFF0.
 const springGreen50 = Color(0xffE5FFF0);

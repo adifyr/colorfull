@@ -1,4 +1,4 @@
-import 'package:flutter/services.dart';
+import 'dart:ui';
 
 /// Deep Orange 50. Hex Code: #FFEBE5.
 const deepOrange50 = Color(0xffFFEBE5);

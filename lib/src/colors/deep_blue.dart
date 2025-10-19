@@ -1,4 +1,4 @@
-import 'package:flutter/services.dart';
+import 'dart:ui';
 
 /// Deep Blue 50. Hex Code: #EBE5FF.
 const deepBlue50 = Color(0xffEBE5FF);

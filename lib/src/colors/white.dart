@@ -1,4 +1,4 @@
-import 'package:flutter/services.dart';
+import 'dart:ui';
 
 /// White - 5% Opacity.
 const white5 = Color(0x0dFFFFFF);

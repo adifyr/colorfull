@@ -1,4 +1,4 @@
-import 'package:flutter/services.dart';
+import 'dart:ui';
 
 /// Lime Green 50. Hex Code: #F5FFE5.
 const limeGreen50 = Color(0xffF5FFE5);

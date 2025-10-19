@@ -1,11 +1,11 @@
 name: colorfull
 description: "The full palette of HSL Colors available as constants for Flutter"
-version: 1.0.3
+version: 1.1.0
 homepage: https://github.com/adifyr/colorfull
 
 environment:
   sdk: ^3.9.2
-  flutter: ">=1.17.0"
+  flutter: ">=3.22.0"
 
 dependencies:
   flutter:
