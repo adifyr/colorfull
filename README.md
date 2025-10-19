@@ -16,6 +16,7 @@ Colorfull solves this by giving Flutter developers direct, instant access to the
 - ⚡️ **Zero Dependencies**: Pure Dart/Flutter, no external dependencies.
 - 🖼️ **Perfect for Design Systems**: Build beautiful, consistent UIs with fine-grained color control.
 - 🌳 **Highly Tree-Shakeable**: Only the colors you use are included in your final app build, keeping your app size minimal.
+- ✏️ **Custom Swatches**: With our new `Swatch` class, you can now define custom swatches of your own!
 
 ## Usage
 
@@ -49,6 +50,37 @@ final rgba = redK400.getRGBA(); // (r: 199, g: 107, b: 107, a: 255) Tuple
 final hex = amberH600.getHex(); // '#A38B29' String
 final faded = blueP350 * 0.5;   // Color (Blue P-350) with 50% opacity
 ```
+
+### Custom Swatches
+
+You can now create your very own swatch from any base color using the `Swatch` class!
+
+`Swatch` extends Flutter's `Color` and accepts a 32-bit ARGB integer (the same value you pass to `Color`).
+From that base color the class generates a full HSL-based swatch: multiple saturation grades (A to S) and lightness shades (50 to 950).
+
+- Create a swatch from an ARGB `int` or from an existing `Color` using `color.value`.
+- Access generated variants using the letter/number getters (for example `a300`, `k650`) or by index with the `[]` operator (for example `swatch[300]`).
+- Because `Swatch` extends `Color`, you can use it anywhere a `Color` is accepted.
+
+Example:
+
+```dart
+import 'package:colorfull/colorfull.dart';
+
+// Create a swatch from a literal ARGB value
+final brand = Swatch(0xFF0066CC);
+
+// Or create from an existing Color
+// final brand = Swatch(blue650.value);
+
+Container(
+  color: brand.a200, // high-saturation, high-lightness variant
+  padding: const EdgeInsets.all(12),
+  child: Text('Brand', style: TextStyle(color: brand[900])),
+);
+```
+
+The `Swatch` class is deterministic and HSL-based, so the variants it generates are consistent with the rest of the package's palette. Use it when you want to derive a full, consistent color system from a single brand or base color.
 
 ## How The System Works
 

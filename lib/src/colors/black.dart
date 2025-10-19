@@ -1,5 +1,10 @@
 import 'dart:ui';
 
+/// Black - 0% Opacity.
+///
+/// This is useful for use in gradients, glows and shadows, where you may want to smoothly transition between different opacities of black.
+const black0 = Color(0x00000000);
+
 /// Black - 5% Opacity.
 const black5 = Color(0x0d000000);
 

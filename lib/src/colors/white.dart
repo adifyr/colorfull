@@ -1,5 +1,10 @@
 import 'dart:ui';
 
+/// White - 0% Opacity.
+///
+/// This is useful for use in gradients, glows and shadows, where you may want to smoothly transition between different opacities of white.
+const white0 = Color(0x00FFFFFF);
+
 /// White - 5% Opacity.
 const white5 = Color(0x0dFFFFFF);
 

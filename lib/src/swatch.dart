@@ -1,11 +1,34 @@
 import 'dart:math' show min, max;
 import 'dart:ui' show Color;
 
+/// A Color-based swatch for a base ARGB color.
+///
+/// `Swatch` extends [Color] and precomputes HSL-derived shades and saturation
+/// grades for the base color. Use the provided getters (for select saturation
+/// grades) or `[]` to access shades of the original color.
+///
+/// **Using a provided getter.**
+///
+/// ```dart
+/// final swatch = Swatch(0xff6C35FF);
+/// final lightVariant = swatch.b150; // 90% saturation, 85% lightness.
+/// ```
+///
+/// **Using the `[]` operator to get a specific shade.**
+/// ```dart
+/// final swatch = Swatch(0xff6C35FF);
+/// final lightVariant = swatch[150]; // Same saturation, 85% lightness.
+/// ```
 class Swatch extends Color {
   late final Map<int, Color> _colors;
   late final double _s, _l, _a;
   late double _h;
 
+  /// Creates a [Swatch] from a 32-bit ARGB integer (0xAARRGGBB).
+  ///
+  /// The constructor extracts alpha, hue, saturation and lightness from `val`
+  /// and precomputes the internal map of shade variants used by the getters
+  /// and `operator []`.
   Swatch(final int val) : super(val) {
     _a = ((val >> 24) & 0xff) / 255;
     final red = ((val >> 16) & 0xff) / 255;
@@ -25,9 +48,16 @@ class Swatch extends Color {
     _h = _h * 60.0 + (_h < 0.0 ? 360.0 : 0.0);
     _l = (mx + mn) / 2;
     _s = mx == mn ? 0.0 : delta / (_l > 0.5 ? 2 - mx - mn : mx + mn);
-    _colors = {for (int i = 5; i < 100; i += 5) i * 10: _hslToColor(_s, (100.0 - i) / 100.0)};
+    _colors = {
+      for (int i = 5; i < 100; i += 5)
+        i * 10: _hslToColor(_s, (100.0 - i) / 100.0),
+    };
   }
 
+  /// Returns the swatch color for the given [lightness] key.
+  ///
+  /// Valid lightness keys are 50, 100, 150, …, 950 (increments of 50).
+  /// Throws a runtime exception if an invalid key is supplied.
   Color operator [](int lightness) => _colors[lightness]!;
 
   Color _hslToColor(double sat, double light) {
@@ -53,7 +83,9 @@ class Swatch extends Color {
     final b = hueToRgb(p, q, hk - 1 / 3);
 
     int toByte(double v) => ((v.clamp(0.0, 1.0) * 255).round()) & 0xFF;
-    return Color((toByte(_a) << 24) | (toByte(r) << 16) | (toByte(g) << 8) | toByte(b));
+    return Color(
+      (toByte(_a) << 24) | (toByte(r) << 16) | (toByte(g) << 8) | toByte(b),
+    );
   }
 
   /// Swatch variant with Saturation Grade "A" (95% Saturation), Shade 50 (95% Lightness).
