@@ -1,3 +1,8 @@
+# 1.1.1
+
+- Updated documentation for the new `Swatch` class.
+- Fixed a couple of issues in the `example` directory.
+
 # 1.1.0
 
 - Switched color imports from `package:flutter/services.dart` to `dart:ui` across the library to remove the Flutter dependency for color primitives.
