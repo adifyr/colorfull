@@ -1,5 +1,5 @@
 import 'package:colorfull/colorfull.dart'
-    show grey50, indigo650, white85, dodgerBlueA250, dodgerBlueA900, deepOrangeC550;
+    show grey50, indigo650, white85, dodgerBlueA250, dodgerBlueA900, deepOrangeC550, ColorUtils;
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,7 +17,7 @@ class MainApp extends StatelessWidget {
         body: Center(
           child: Column(
             mainAxisSize: MainAxisSize.min,
-            spacing: 16.0,
+            spacing: 24.0,
             children: [
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 16.0),
@@ -27,24 +27,33 @@ class MainApp extends StatelessWidget {
                   style: TextStyle(fontWeight: FontWeight.w500, color: white85),
                 ),
               ),
-              ElevatedButton(
-                onPressed: () {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text(
-                        'Deep Orange - Hex: ${deepOrangeC550.getHex()} | RGBA: ${deepOrangeC550.getRGBA()} | Faded: ${deepOrangeC550 * 0.4}',
-                      ),
-                      backgroundColor: deepOrangeC550,
-                    ),
-                  );
-                },
-                style: ElevatedButton.styleFrom(backgroundColor: dodgerBlueA250),
-                child: Text('Dodger Blue', style: TextStyle(color: dodgerBlueA900)),
-              ),
+              ColorButton(),
             ],
           ),
         ),
       ),
+    );
+  }
+}
+
+class ColorButton extends StatelessWidget {
+  const ColorButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: () {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(
+              'Deep Orange - Hex: ${deepOrangeC550.getHex()} | RGBA: ${deepOrangeC550.getRGBA()} | Faded: ${deepOrangeC550 * 0.4}',
+            ),
+            backgroundColor: deepOrangeC550,
+          ),
+        );
+      },
+      style: ElevatedButton.styleFrom(backgroundColor: dodgerBlueA250),
+      child: Text('Dodger Blue', style: TextStyle(color: dodgerBlueA900)),
     );
   }
 }
