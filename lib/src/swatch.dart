@@ -88,6 +88,129 @@ class Swatch extends Color {
     );
   }
 
+  /// 5% Lighter Variant of Original Color.
+  ///
+  /// Maximum Lightness is 100% (White).
+  Color get lighter50 => _hslToColor(_s, max(1.0, _l + 0.05));
+
+  /// 10% Lighter Variant of Original Color.
+  ///
+  /// Maximum Lightness is 100% (White).
+  Color get lighter100 => _hslToColor(_s, max(1.0, _l + 0.1));
+
+  /// 15% Lighter Variant of Original Color.
+  ///
+  /// Maximum Lightness is 100% (White).
+  Color get lighter150 => _hslToColor(_s, max(1.0, _l + 0.15));
+
+  /// 20% Lighter Variant of Original Color.
+  ///
+  /// Maximum Lightness is 100% (White).
+  Color get lighter200 => _hslToColor(_s, max(1.0, _l + 0.2));
+
+  /// 25% Lighter Variant of Original Color.
+  ///
+  /// Maximum Lightness is 100% (White).
+  Color get lighter250 => _hslToColor(_s, max(1.0, _l + 0.25));
+
+  /// 30% Lighter Variant of Original Color.
+  ///
+  /// Maximum Lightness is 100% (White).
+  Color get lighter300 => _hslToColor(_s, max(1.0, _l + 0.3));
+
+  /// 5% Darker Variant of Original Color.
+  ///
+  /// Minimum Lightness is 0% (Black).
+  Color get darker50 => _hslToColor(_s, min(0.0, _l - 0.05));
+
+  /// 10% Darker Variant of Original Color.
+  ///
+  /// Minimum Lightness is 0% (Black).
+  Color get darker100 => _hslToColor(_s, min(0.0, _l - 0.1));
+
+  /// 15% Darker Variant of Original Color.
+  ///
+  /// Minimum Lightness is 0% (Black).
+  Color get darker150 => _hslToColor(_s, min(0.0, _l - 0.15));
+
+  /// 20% Darker Variant of Original Color.
+  ///
+  /// Minimum Lightness is 0% (Black).
+  Color get darker200 => _hslToColor(_s, min(0.0, _l - 0.2));
+
+  /// 25% Darker Variant of Original Color.
+  ///
+  /// Minimum Lightness is 0% (Black).
+  Color get darker250 => _hslToColor(_s, min(0.0, _l - 0.25));
+
+  /// 30% Darker Variant of Original Color.
+  ///
+  /// Minimum Lightness is 0% (Black).
+  Color get darker300 => _hslToColor(_s, min(0.0, _l - 0.3));
+
+  /// 5% More Saturated Variant of Original Color.
+  ///
+  /// Maximum Saturation is 100% (Fully Saturated).
+  Color get sat50 => _hslToColor(max(1.0, _s + 0.05), _l);
+
+  /// 10% More Saturated Variant of Original Color.
+  ///
+  /// Maximum Saturation is 100% (Fully Saturated).
+  Color get sat100 => _hslToColor(max(1.0, _s + 0.1), _l);
+
+  /// 15% More Saturated Variant of Original Color.
+  ///
+  /// Maximum Saturation is 100% (Fully Saturated).
+  Color get sat150 => _hslToColor(max(1.0, _s + 0.15), _l);
+
+  /// 20% More Saturated Variant of Original Color.
+  ///
+  /// Maximum Saturation is 100% (Fully Saturated).
+  Color get sat200 => _hslToColor(max(1.0, _s + 0.2), _l);
+
+  /// 25% More Saturated Variant of Original Color.
+  ///
+  /// Maximum Saturation is 100% (Fully Saturated).
+  Color get sat250 => _hslToColor(max(1.0, _s + 0.25), _l);
+
+  /// 30% More Saturated Variant of Original Color.
+  ///
+  /// Maximum Saturation is 100% (Fully Saturated).
+  Color get sat300 => _hslToColor(max(1.0, _s + 0.3), _l);
+
+  /// 5% Less Saturated Variant of Original Color.
+  ///
+  /// Minimum Saturation is 0% (Grey).
+  Color get desat50 => _hslToColor(min(0.0, _s - 0.05), _l);
+
+  /// 10% Less Saturated Variant of Original Color.
+  ///
+  /// Minimum Saturation is 0% (Grey).
+  Color get desat100 => _hslToColor(min(0.0, _s - 0.1), _l);
+
+  /// 15% Less Saturated Variant of Original Color.
+  ///
+  /// Minimum Saturation is 0% (Grey).
+  Color get desat150 => _hslToColor(min(0.0, _s - 0.15), _l);
+
+  /// 20% Less Saturated Variant of Original Color.
+  ///
+  /// Minimum Saturation is 0% (Grey).
+  Color get desat200 => _hslToColor(min(0.0, _s - 0.2), _l);
+
+  /// 25% Less Saturated Variant of Original Color.
+  ///
+  /// Minimum Saturation is 0% (Grey).
+  Color get desat250 => _hslToColor(min(0.0, _s - 0.25), _l);
+
+  /// 30% Less Saturated Variant of Original Color.
+  ///
+  /// Minimum Saturation is 0% (Grey).
+  Color get desat300 => _hslToColor(min(0.0, _s - 0.3), _l);
+
+  /// Swatch variant with Saturation Grade "A" (95% Saturation) and Original Lightness.
+  Color get a0 => _hslToColor(0.95, _l);
+
   /// Swatch variant with Saturation Grade "A" (95% Saturation), Shade 50 (95% Lightness).
   Color get a50 => _hslToColor(0.95, 0.95);
 
@@ -144,6 +267,9 @@ class Swatch extends Color {
 
   /// Swatch variant with Saturation Grade "A" (95% Saturation), Shade 950 (5% Lightness).
   Color get a950 => _hslToColor(0.95, 0.05);
+
+  /// Swatch variant with Saturation Grade "B" (90% Saturation) and Original Lightness.
+  Color get b0 => _hslToColor(0.90, _l);
 
   /// Swatch variant with Saturation Grade "B" (90% Saturation), Shade 50 (95% Lightness).
   Color get b50 => _hslToColor(0.90, 0.95);
@@ -202,6 +328,9 @@ class Swatch extends Color {
   /// Swatch variant with Saturation Grade "B" (90% Saturation), Shade 950 (5% Lightness).
   Color get b950 => _hslToColor(0.90, 0.05);
 
+  /// Swatch variant with Saturation Grade "C" (85% Saturation) and Original Lightness.
+  Color get c0 => _hslToColor(0.85, _l);
+
   /// Swatch variant with Saturation Grade "C" (85% Saturation), Shade 50 (95% Lightness).
   Color get c50 => _hslToColor(0.85, 0.95);
 
@@ -258,6 +387,9 @@ class Swatch extends Color {
 
   /// Swatch variant with Saturation Grade "C" (85% Saturation), Shade 950 (5% Lightness).
   Color get c950 => _hslToColor(0.85, 0.05);
+
+  /// Swatch variant with Saturation Grade "D" (80% Saturation) and Original Lightness.
+  Color get d0 => _hslToColor(0.80, _l);
 
   /// Swatch variant with Saturation Grade "D" (80% Saturation), Shade 50 (95% Lightness).
   Color get d50 => _hslToColor(0.80, 0.95);
@@ -316,6 +448,9 @@ class Swatch extends Color {
   /// Swatch variant with Saturation Grade "D" (80% Saturation), Shade 950 (5% Lightness).
   Color get d950 => _hslToColor(0.80, 0.05);
 
+  /// Swatch variant with Saturation Grade "E" (75% Saturation) and Original Lightness.
+  Color get e0 => _hslToColor(0.75, _l);
+
   /// Swatch variant with Saturation Grade "E" (75% Saturation), Shade 50 (95% Lightness).
   Color get e50 => _hslToColor(0.75, 0.95);
 
@@ -372,6 +507,9 @@ class Swatch extends Color {
 
   /// Swatch variant with Saturation Grade "E" (75% Saturation), Shade 950 (5% Lightness).
   Color get e950 => _hslToColor(0.75, 0.05);
+
+  /// Swatch variant with Saturation Grade "F" (70% Saturation) and Original Lightness.
+  Color get f0 => _hslToColor(0.70, _l);
 
   /// Swatch variant with Saturation Grade "F" (70% Saturation), Shade 50 (95% Lightness).
   Color get f50 => _hslToColor(0.70, 0.95);
@@ -430,6 +568,9 @@ class Swatch extends Color {
   /// Swatch variant with Saturation Grade "F" (70% Saturation), Shade 950 (5% Lightness).
   Color get f950 => _hslToColor(0.70, 0.05);
 
+  /// Swatch variant with Saturation Grade "G" (65% Saturation) and Original Lightness.
+  Color get g0 => _hslToColor(0.65, _l);
+
   /// Swatch variant with Saturation Grade "G" (65% Saturation), Shade 50 (95% Lightness).
   Color get g50 => _hslToColor(0.65, 0.95);
 
@@ -486,6 +627,9 @@ class Swatch extends Color {
 
   /// Swatch variant with Saturation Grade "G" (65% Saturation), Shade 950 (5% Lightness).
   Color get g950 => _hslToColor(0.65, 0.05);
+
+  /// Swatch variant with Saturation Grade "H" (60% Saturation) and Original Lightness.
+  Color get h0 => _hslToColor(0.60, _l);
 
   /// Swatch variant with Saturation Grade "H" (60% Saturation), Shade 50 (95% Lightness).
   Color get h50 => _hslToColor(0.60, 0.95);
@@ -544,6 +688,9 @@ class Swatch extends Color {
   /// Swatch variant with Saturation Grade "H" (60% Saturation), Shade 950 (5% Lightness).
   Color get h950 => _hslToColor(0.60, 0.05);
 
+  /// Swatch variant with Saturation Grade "I" (55% Saturation) and Original Lightness.
+  Color get i0 => _hslToColor(0.55, _l);
+
   /// Swatch variant with Saturation Grade "I" (55% Saturation), Shade 50 (95% Lightness).
   Color get i50 => _hslToColor(0.55, 0.95);
 
@@ -600,6 +747,9 @@ class Swatch extends Color {
 
   /// Swatch variant with Saturation Grade "I" (55% Saturation), Shade 950 (5% Lightness).
   Color get i950 => _hslToColor(0.55, 0.05);
+
+  /// Swatch variant with Saturation Grade "J" (50% Saturation) and Original Lightness.
+  Color get j0 => _hslToColor(0.50, _l);
 
   /// Swatch variant with Saturation Grade "J" (50% Saturation), Shade 50 (95% Lightness).
   Color get j50 => _hslToColor(0.50, 0.95);
@@ -658,6 +808,9 @@ class Swatch extends Color {
   /// Swatch variant with Saturation Grade "J" (50% Saturation), Shade 950 (5% Lightness).
   Color get j950 => _hslToColor(0.50, 0.05);
 
+  /// Swatch variant with Saturation Grade "K" (45% Saturation) and Original Lightness.
+  Color get k0 => _hslToColor(0.45, _l);
+
   /// Swatch variant with Saturation Grade "K" (45% Saturation), Shade 50 (95% Lightness).
   Color get k50 => _hslToColor(0.45, 0.95);
 
@@ -714,6 +867,9 @@ class Swatch extends Color {
 
   /// Swatch variant with Saturation Grade "K" (45% Saturation), Shade 950 (5% Lightness).
   Color get k950 => _hslToColor(0.45, 0.05);
+
+  /// Swatch variant with Saturation Grade "L" (40% Saturation) and Original Lightness.
+  Color get l0 => _hslToColor(0.40, _l);
 
   /// Swatch variant with Saturation Grade "L" (40% Saturation), Shade 50 (95% Lightness).
   Color get l50 => _hslToColor(0.40, 0.95);
@@ -772,6 +928,9 @@ class Swatch extends Color {
   /// Swatch variant with Saturation Grade "L" (40% Saturation), Shade 950 (5% Lightness).
   Color get l950 => _hslToColor(0.40, 0.05);
 
+  /// Swatch variant with Saturation Grade "M" (35% Saturation) and Original Lightness.
+  Color get m0 => _hslToColor(0.35, _l);
+
   /// Swatch variant with Saturation Grade "M" (35% Saturation), Shade 50 (95% Lightness).
   Color get m50 => _hslToColor(0.35, 0.95);
 
@@ -828,6 +987,9 @@ class Swatch extends Color {
 
   /// Swatch variant with Saturation Grade "M" (35% Saturation), Shade 950 (5% Lightness).
   Color get m950 => _hslToColor(0.35, 0.05);
+
+  /// Swatch variant with Saturation Grade "N" (30% Saturation) and Original Lightness.
+  Color get n0 => _hslToColor(0.30, _l);
 
   /// Swatch variant with Saturation Grade "N" (30% Saturation), Shade 50 (95% Lightness).
   Color get n50 => _hslToColor(0.30, 0.95);
@@ -886,6 +1048,9 @@ class Swatch extends Color {
   /// Swatch variant with Saturation Grade "N" (30% Saturation), Shade 950 (5% Lightness).
   Color get n950 => _hslToColor(0.30, 0.05);
 
+  /// Swatch variant with Saturation Grade "O" (25% Saturation) and Original Lightness.
+  Color get o0 => _hslToColor(0.25, _l);
+
   /// Swatch variant with Saturation Grade "O" (25% Saturation), Shade 50 (95% Lightness).
   Color get o50 => _hslToColor(0.25, 0.95);
 
@@ -942,6 +1107,9 @@ class Swatch extends Color {
 
   /// Swatch variant with Saturation Grade "O" (25% Saturation), Shade 950 (5% Lightness).
   Color get o950 => _hslToColor(0.25, 0.05);
+
+  /// Swatch variant with Saturation Grade "P" (20% Saturation) and Original Lightness.
+  Color get p0 => _hslToColor(0.20, _l);
 
   /// Swatch variant with Saturation Grade "P" (20% Saturation), Shade 50 (95% Lightness).
   Color get p50 => _hslToColor(0.20, 0.95);
@@ -1000,6 +1168,9 @@ class Swatch extends Color {
   /// Swatch variant with Saturation Grade "P" (20% Saturation), Shade 950 (5% Lightness).
   Color get p950 => _hslToColor(0.20, 0.05);
 
+  /// Swatch variant with Saturation Grade "Q" (15% Saturation), Shade 0 (100% Lightness).
+  Color get q0 => _hslToColor(0.15, _l);
+
   /// Swatch variant with Saturation Grade "Q" (15% Saturation), Shade 50 (95% Lightness).
   Color get q50 => _hslToColor(0.15, 0.95);
 
@@ -1057,6 +1228,9 @@ class Swatch extends Color {
   /// Swatch variant with Saturation Grade "Q" (15% Saturation), Shade 950 (5% Lightness).
   Color get q950 => _hslToColor(0.15, 0.05);
 
+  /// Swatch variant with Saturation Grade "R" (10% Saturation) and Original Lightness.
+  Color get r0 => _hslToColor(0.10, 0.50);
+
   /// Swatch variant with Saturation Grade "R" (10% Saturation), Shade 50 (95% Lightness).
   Color get r50 => _hslToColor(0.10, 0.95);
 
@@ -1113,6 +1287,9 @@ class Swatch extends Color {
 
   /// Swatch variant with Saturation Grade "R" (10% Saturation), Shade 950 (5% Lightness).
   Color get r950 => _hslToColor(0.10, 0.05);
+
+  /// Swatch variant with Saturation Grade "S" (5% Saturation) and Original Lightness.
+  Color get s0 => _hslToColor(0.05, 0.50);
 
   /// Swatch variant with Saturation Grade "S" (5% Saturation), Shade 50 (95% Lightness).
   Color get s50 => _hslToColor(0.05, 0.95);

@@ -1,3 +1,8 @@
+# 1.2.0
+
+- Added getters to the `Swatch` class for comparitively lighter, darker, more saturated and less saturated colors.
+- Added 2 new popular saturation variants: `brown` and `slate` as standalone color swatches.
+
 # 1.1.1
 
 - Updated documentation for the new `Swatch` class.

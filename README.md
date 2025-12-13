@@ -4,13 +4,13 @@
 
 **Colorfull** was created to solve a major limitation in popular design systems like Tailwind and Material Design: their woefully limited color palettes. There is no quick and easy way to access a large range of colors directly, making it difficult to build themes and design systems with true creative freedom.
 
-Colorfull solves this by giving Flutter developers direct, instant access to the full palette of 11,421 colors derived from the HSL color wheel — covering 30 base hues × 20 saturation levels × 19 lightness levels + 19 shades of grey + black and white. Every color is exposed as a global constant for fast, type-safe access — making it easy to build beautiful, consistent UIs with complete flexibility.
+Colorfull solves this by giving Flutter developers direct, instant access to the full palette of 11,041 colors derived from the HSL color wheel — covering 29 base hues × 20 saturation levels × 19 lightness levels + 19 shades of grey + black and white. Every color is exposed as a global constant for fast, type-safe access — making it easy to build beautiful, consistent UIs with complete flexibility.
 
 <p align="center"><img src="https://raw.githubusercontent.com/adifyr/colorfull/refs/heads/main/assets/system.png"></p>
 
 ## Features
 
-- 🌈 **11,421 Colors**: Every possible combination of 30 base hues, 20 saturation levels, and 19 lightness levels + 19 shades of grey + black and white.
+- 🌈 **11,041 Colors**: Every possible combination of 29 base hues, 20 saturation levels, and 19 lightness levels + 19 shades of grey + black and white.
 - 🔎 **Global Constants**: All colors are available as named Dart constants — no need to calculate or convert.
 - 🎨 **Consistent Naming**: Colors are organized and named for easy lookup and autocompletion.
 - ⚡️ **Zero Dependencies**: Pure Dart/Flutter, no external dependencies.
@@ -60,6 +60,7 @@ From that base color the class generates a full HSL-based swatch: multiple satur
 
 - Create a swatch from an ARGB `int` or from an existing `Color` using `color.value`.
 - Access generated variants using the letter/number getters (for example `a300`, `k650`) or by shade map (if you just want to adjust the lightness) with the `[]` operator (for example `swatch[300]`).
+- Get lighter, darker, saturated and desaturated variants of your color using getters such as `.ligher100`, `.darker150`, `.sat50`, and `.desat250`.
 - Because `Swatch` extends `Color`, you can use it anywhere a `Color` is accepted.
 
 Example:
@@ -74,9 +75,13 @@ final brand = Swatch(0xFF0066CC);
 // final brand = Swatch(blue650.value);
 
 Container(
-  color: brand.a200, // high-saturation, high-lightness variant
+  decoration: BoxDecoration(
+    color: brand.a200, // high-saturation, high-lightness variant
+    borderRadius: BorderRadius.circular(8.0),
+    border: Border.all(color: brand.darker150, width: 2.0), // color with 15% lower lightness.
+  ),
   padding: const EdgeInsets.all(12),
-  child: Text('Brand', style: TextStyle(color: brand[900])),
+  child: Text('Brand', style: TextStyle(color: brand[900])), // dark variant with original saturation
 );
 ```
 
@@ -84,7 +89,7 @@ The `Swatch` class is deterministic and HSL-based, so the variants it generates 
 
 ## How The System Works
 
-### List Of 30 Base Colors/Hues
+### List Of 29 Base Colors/Hues
 
 - `red`
 - `deepOrange`
@@ -98,6 +103,7 @@ The `Swatch` class is deterministic and HSL-based, so the variants it generates 
 - `neonGreen`
 - `green`
 - `lightGreen`
+- `springGreen`
 - `sportsGreen`
 - `aquamarine`
 - `cyan`
@@ -115,6 +121,11 @@ The `Swatch` class is deterministic and HSL-based, so the variants it generates 
 - `pink`
 - `rose`
 
+### Additional Popular Swatches Based On Single Saturation Variant
+
+- `brown` (50% Saturation Variant of Pumpkin Orange - `pumpkinOrangeJxx`)
+- `slate` (10% Saturation Variant of Cornflower Blue - `cornflowerBlueRxx`)
+
 ### Lightness
 
 The lightness levels are number coded from **50 (lightest) to 950 (darkest)**. If you have used palettes like Material Colors or Tailwind Colors before, this should be familiar to you.
@@ -126,5 +137,4 @@ There is no letter for a 100% saturated color. Starting from 95%, the saturation
 ## Additional Information
 
 - **Documentation**: Full API reference is available on [pub.dev](https://pub.dev/documentation/colorfull/latest). Use the sidebar to browse all color constants.
-- **Issues & Contributions**: Found a bug or want to contribute? Open an issue or pull request on [GitHub](https://github.com/adifyr/colorfull).
-- **Contact**: For questions, you can reach out via [GitHub Issues](https://github.com/adifyr/colorfull/issues).
+- **Color/Feature Requests**: Have a color/feature request or any other issue? Please feel free to reach out via [GitHub Issues](https://github.com/adifyr/colorfull/issues).
