@@ -8,6 +8,10 @@ Colorfull solves this by giving Flutter developers direct, instant access to the
 
 <p align="center"><img src="https://raw.githubusercontent.com/adifyr/colorfull/refs/heads/main/assets/system.png"></p>
 
+### View Demo
+
+To see a live showcase of all available color palettes, please have a look at the [Colorfull Demo](https://demos-hosting.web.app/).
+
 ## Features
 
 - 🌈 **11,041 Colors**: Every possible combination of 29 base hues, 20 saturation levels, and 19 lightness levels + 19 shades of grey + black and white.
