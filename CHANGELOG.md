@@ -1,3 +1,9 @@
+# 1.2.1
+
+### Bug Fixes
+
+- Fixed bug in `Swatch` class where comparative getters returned the wrong color.
+
 # 1.2.0
 
 ### Library Changes
