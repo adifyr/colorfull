@@ -62,7 +62,7 @@ You can now create your very own swatch from any base color using the `Swatch` c
 `Swatch` extends Flutter's `Color` and accepts a 32-bit ARGB integer (the same value you pass to `Color`).
 From that base color the class generates a full HSL-based swatch: multiple saturation grades (A to S) and lightness shades (50 to 950).
 
-- Create a swatch from an ARGB `int` or from an existing `Color` using `color.value`.
+- Create a swatch from an ARGB `int` or from an existing `Color` using `color.toARGB32()`.
 - Access generated variants using the letter/number getters (for example `a300`, `k650`) or by shade map (if you just want to adjust the lightness) with the `[]` operator (for example `swatch[300]`).
 - Get lighter, darker, saturated and desaturated variants of your color using getters such as `.ligher100`, `.darker150`, `.sat50`, and `.desat250`.
 - Because `Swatch` extends `Color`, you can use it anywhere a `Color` is accepted.
@@ -76,7 +76,7 @@ import 'package:colorfull/colorfull.dart';
 final brand = Swatch(0xFF0066CC);
 
 // Or create from an existing Color
-// final brand = Swatch(blue650.value);
+// final brand = Swatch(blue650.toARGB32());
 
 Container(
   decoration: BoxDecoration(

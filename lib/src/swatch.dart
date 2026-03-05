@@ -48,10 +48,7 @@ class Swatch extends Color {
     _h = _h * 60.0 + (_h < 0.0 ? 360.0 : 0.0);
     _l = (mx + mn) / 2;
     _s = mx == mn ? 0.0 : delta / (_l > 0.5 ? 2 - mx - mn : mx + mn);
-    _colors = {
-      for (int i = 5; i < 100; i += 5)
-        i * 10: _hslToColor(_s, (100.0 - i) / 100.0),
-    };
+    _colors = {for (int i = 5; i < 100; i += 5) i * 10: _hslToColor(_s, (100.0 - i) / 100.0)};
   }
 
   /// Returns the swatch color for the given [lightness] key.
@@ -83,100 +80,98 @@ class Swatch extends Color {
     final b = hueToRgb(p, q, hk - 1 / 3);
 
     int toByte(double v) => ((v.clamp(0.0, 1.0) * 255).round()) & 0xFF;
-    return Color(
-      (toByte(_a) << 24) | (toByte(r) << 16) | (toByte(g) << 8) | toByte(b),
-    );
+    return Color((toByte(_a) << 24) | (toByte(r) << 16) | (toByte(g) << 8) | toByte(b));
   }
 
   /// 5% Lighter Variant of Original Color.
   ///
   /// Maximum Lightness is 100% (White).
-  Color get lighter50 => _hslToColor(_s, max(1.0, _l + 0.05));
+  Color get lighter50 => _hslToColor(_s, min(1.0, _l + 0.05));
 
   /// 10% Lighter Variant of Original Color.
   ///
   /// Maximum Lightness is 100% (White).
-  Color get lighter100 => _hslToColor(_s, max(1.0, _l + 0.1));
+  Color get lighter100 => _hslToColor(_s, min(1.0, _l + 0.1));
 
   /// 15% Lighter Variant of Original Color.
   ///
   /// Maximum Lightness is 100% (White).
-  Color get lighter150 => _hslToColor(_s, max(1.0, _l + 0.15));
+  Color get lighter150 => _hslToColor(_s, min(1.0, _l + 0.15));
 
   /// 20% Lighter Variant of Original Color.
   ///
   /// Maximum Lightness is 100% (White).
-  Color get lighter200 => _hslToColor(_s, max(1.0, _l + 0.2));
+  Color get lighter200 => _hslToColor(_s, min(1.0, _l + 0.2));
 
   /// 25% Lighter Variant of Original Color.
   ///
   /// Maximum Lightness is 100% (White).
-  Color get lighter250 => _hslToColor(_s, max(1.0, _l + 0.25));
+  Color get lighter250 => _hslToColor(_s, min(1.0, _l + 0.25));
 
   /// 30% Lighter Variant of Original Color.
   ///
   /// Maximum Lightness is 100% (White).
-  Color get lighter300 => _hslToColor(_s, max(1.0, _l + 0.3));
+  Color get lighter300 => _hslToColor(_s, min(1.0, _l + 0.3));
 
   /// 5% Darker Variant of Original Color.
   ///
   /// Minimum Lightness is 0% (Black).
-  Color get darker50 => _hslToColor(_s, min(0.0, _l - 0.05));
+  Color get darker50 => _hslToColor(_s, max(0.0, _l - 0.05));
 
   /// 10% Darker Variant of Original Color.
   ///
   /// Minimum Lightness is 0% (Black).
-  Color get darker100 => _hslToColor(_s, min(0.0, _l - 0.1));
+  Color get darker100 => _hslToColor(_s, max(0.0, _l - 0.1));
 
   /// 15% Darker Variant of Original Color.
   ///
   /// Minimum Lightness is 0% (Black).
-  Color get darker150 => _hslToColor(_s, min(0.0, _l - 0.15));
+  Color get darker150 => _hslToColor(_s, max(0.0, _l - 0.15));
 
   /// 20% Darker Variant of Original Color.
   ///
   /// Minimum Lightness is 0% (Black).
-  Color get darker200 => _hslToColor(_s, min(0.0, _l - 0.2));
+  Color get darker200 => _hslToColor(_s, max(0.0, _l - 0.2));
 
   /// 25% Darker Variant of Original Color.
   ///
   /// Minimum Lightness is 0% (Black).
-  Color get darker250 => _hslToColor(_s, min(0.0, _l - 0.25));
+  Color get darker250 => _hslToColor(_s, max(0.0, _l - 0.25));
 
   /// 30% Darker Variant of Original Color.
   ///
   /// Minimum Lightness is 0% (Black).
-  Color get darker300 => _hslToColor(_s, min(0.0, _l - 0.3));
+  Color get darker300 => _hslToColor(_s, max(0.0, _l - 0.3));
 
   /// 5% More Saturated Variant of Original Color.
   ///
   /// Maximum Saturation is 100% (Fully Saturated).
-  Color get sat50 => _hslToColor(max(1.0, _s + 0.05), _l);
+  Color get sat50 => _hslToColor(min(1.0, _s + 0.05), _l);
 
   /// 10% More Saturated Variant of Original Color.
   ///
   /// Maximum Saturation is 100% (Fully Saturated).
-  Color get sat100 => _hslToColor(max(1.0, _s + 0.1), _l);
+  Color get sat100 => _hslToColor(min(1.0, _s + 0.1), _l);
 
   /// 15% More Saturated Variant of Original Color.
   ///
   /// Maximum Saturation is 100% (Fully Saturated).
-  Color get sat150 => _hslToColor(max(1.0, _s + 0.15), _l);
+  Color get sat150 => _hslToColor(min(1.0, _s + 0.15), _l);
 
   /// 20% More Saturated Variant of Original Color.
   ///
   /// Maximum Saturation is 100% (Fully Saturated).
-  Color get sat200 => _hslToColor(max(1.0, _s + 0.2), _l);
+  Color get sat200 => _hslToColor(min(1.0, _s + 0.2), _l);
 
   /// 25% More Saturated Variant of Original Color.
   ///
   /// Maximum Saturation is 100% (Fully Saturated).
-  Color get sat250 => _hslToColor(max(1.0, _s + 0.25), _l);
+  Color get sat250 => _hslToColor(min(1.0, _s + 0.25), _l);
 
   /// 30% More Saturated Variant of Original Color.
   ///
   /// Maximum Saturation is 100% (Fully Saturated).
-  Color get sat300 => _hslToColor(max(1.0, _s + 0.3), _l);
+  Color get sat300 => _hslToColor(min(1.0, _s + 0.3), _l);
 
   /// 5% Less Saturated Variant of Original Color.
   ///
@@ -186,27 +181,27 @@ class Swatch extends Color {
   /// 10% Less Saturated Variant of Original Color.
   ///
   /// Minimum Saturation is 0% (Grey).
-  Color get desat100 => _hslToColor(min(0.0, _s - 0.1), _l);
+  Color get desat100 => _hslToColor(max(0.0, _s - 0.1), _l);
 
   /// 15% Less Saturated Variant of Original Color.
   ///
   /// Minimum Saturation is 0% (Grey).
-  Color get desat150 => _hslToColor(min(0.0, _s - 0.15), _l);
+  Color get desat150 => _hslToColor(max(0.0, _s - 0.15), _l);
 
   /// 20% Less Saturated Variant of Original Color.
   ///
   /// Minimum Saturation is 0% (Grey).
-  Color get desat200 => _hslToColor(min(0.0, _s - 0.2), _l);
+  Color get desat200 => _hslToColor(max(0.0, _s - 0.2), _l);
 
   /// 25% Less Saturated Variant of Original Color.
   ///
   /// Minimum Saturation is 0% (Grey).
-  Color get desat250 => _hslToColor(min(0.0, _s - 0.25), _l);
+  Color get desat250 => _hslToColor(max(0.0, _s - 0.25), _l);
 
   /// 30% Less Saturated Variant of Original Color.
   ///
   /// Minimum Saturation is 0% (Grey).
-  Color get desat300 => _hslToColor(min(0.0, _s - 0.3), _l);
+  Color get desat300 => _hslToColor(max(0.0, _s - 0.3), _l);
 
   /// Swatch variant with Saturation Grade "A" (95% Saturation) and Original Lightness.
   Color get a0 => _hslToColor(0.95, _l);
