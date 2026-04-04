@@ -19,10 +19,11 @@ import 'dart:ui' show Color;
 /// final swatch = Swatch(0xff6C35FF);
 /// final lightVariant = swatch[150]; // Same saturation, 85% lightness.
 /// ```
-class Swatch extends Color {
+/// [DEPRECATED] Use [ColorUtils] extension on [Color] instead.
+@Deprecated('Methods of swatch have been moved to the `ColorUtils` extension. This class will be removed soon.')
+final class Swatch extends Color {
   late final Map<int, Color> _colors;
-  late final double _s, _l, _a;
-  late double _h;
+  late final double _s, _l, _a, _h;
 
   /// Creates a [Swatch] from a 32-bit ARGB integer (0xAARRGGBB).
   ///
@@ -39,13 +40,13 @@ class Swatch extends Color {
     final mn = min(min(red, green), blue);
     final delta = mx - mn;
 
-    _h = switch (mx) {
+    final h = switch (mx) {
       final v when v == mn => 0.0,
       final v when v == red => (green - blue) / delta,
       final v when v == green => ((blue - red) / delta) + 2.0,
       _ => ((red - green) / delta) + 4.0,
     };
-    _h = _h * 60.0 + (_h < 0.0 ? 360.0 : 0.0);
+    _h = h * 60.0 + (h < 0.0 ? 360.0 : 0.0);
     _l = (mx + mn) / 2;
     _s = mx == mn ? 0.0 : delta / (_l > 0.5 ? 2 - mx - mn : mx + mn);
     _colors = {for (int i = 5; i < 100; i += 5) i * 10: _hslToColor(_s, (100.0 - i) / 100.0)};

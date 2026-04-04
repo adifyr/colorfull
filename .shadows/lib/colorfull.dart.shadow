@@ -51,12 +51,7 @@ extension ColorUtils on Color {
   ///
   /// RGBA values will be in the range of 0-255. Example: (242, 90, 120, 255)
   (int, int, int, int) getRGBA() {
-    return (
-      (r * 255).round() & 0xff,
-      (g * 255).round() & 0xff,
-      (b * 255).round() & 0xff,
-      (a * 255).round() & 0xff,
-    );
+    return ((r * 255).round() & 0xff, (g * 255).round() & 0xff, (b * 255).round() & 0xff, (a * 255).round() & 0xff);
   }
 
   /// Returns the Hex Code [String] for this color. Example: #A38B29.
@@ -76,154 +71,65 @@ extension ColorUtils on Color {
   /// Maximum Lightness is 100% (White).
   Color get lighter100 => _modifyLightness(0.10);
 
-  /// 15% Lighter Variant of Original Color.
-  ///
-  /// Maximum Lightness is 100% (White).
+  // TODO: Add doc comments to all getters.
   Color get lighter150 => _modifyLightness(0.15);
 
-  /// 20% Lighter Variant of Original Color.
-  ///
-  /// Maximum Lightness is 100% (White).
   Color get lighter200 => _modifyLightness(0.20);
 
-  /// 25% Lighter Variant of Original Color.
-  ///
-  /// Maximum Lightness is 100% (White).
   Color get lighter250 => _modifyLightness(0.25);
 
-  /// 30% Lighter Variant of Original Color.
-  ///
-  /// Maximum Lightness is 100% (White).
   Color get lighter300 => _modifyLightness(0.30);
 
-  /// 35% Lighter Variant of Original Color.
-  ///
-  /// Maximum Lightness is 100% (White).
   Color get lighter350 => _modifyLightness(0.35);
 
-  /// 40% Lighter Variant of Original Color.
-  ///
-  /// Maximum Lightness is 100% (White).
   Color get lighter400 => _modifyLightness(0.40);
 
-  /// 5% Darker Variant of Original Color.
-  ///
-  /// Minimum Lightness is 0% (Black).
   Color get darker50 => _modifyLightness(-0.05);
 
-  /// 10% Darker Variant of Original Color.
-  ///
-  /// Minimum Lightness is 0% (Black).
   Color get darker100 => _modifyLightness(-0.10);
 
-  /// 15% Darker Variant of Original Color.
-  ///
-  /// Minimum Lightness is 0% (Black).
   Color get darker150 => _modifyLightness(-0.15);
 
-  /// 20% Darker Variant of Original Color.
-  ///
-  /// Minimum Lightness is 0% (Black).
   Color get darker200 => _modifyLightness(-0.20);
 
-  /// 25% Darker Variant of Original Color.
-  ///
-  /// Minimum Lightness is 0% (Black).
   Color get darker250 => _modifyLightness(-0.25);
 
-  /// 30% Darker Variant of Original Color.
-  ///
-  /// Minimum Lightness is 0% (Black).
   Color get darker300 => _modifyLightness(-0.30);
 
-  /// 35% Darker Variant of Original Color.
-  ///
-  /// Minimum Lightness is 0% (Black).
   Color get darker350 => _modifyLightness(-0.35);
 
-  /// 40% Darker Variant of Original Color.
-  ///
-  /// Minimum Lightness is 0% (Black).
   Color get darker400 => _modifyLightness(-0.40);
 
-  /// 5% More Saturated Variant of Original Color.
-  ///
-  /// Maximum Saturation is 100%.
   Color get sat50 => _modifySaturation(0.05);
 
-  /// 10% More Saturated Variant of Original Color.
-  ///
-  /// Maximum Saturation is 100%.
   Color get sat100 => _modifySaturation(0.10);
 
-  /// 15% More Saturated Variant of Original Color.
-  ///
-  /// Maximum Saturation is 100%.
   Color get sat150 => _modifySaturation(0.15);
 
-  /// 20% More Saturated Variant of Original Color.
-  ///
-  /// Maximum Saturation is 100%.
   Color get sat200 => _modifySaturation(0.20);
 
-  /// 25% More Saturated Variant of Original Color.
-  ///
-  /// Maximum Saturation is 100%.
   Color get sat250 => _modifySaturation(0.25);
 
-  /// 30% More Saturated Variant of Original Color.
-  ///
-  /// Maximum Saturation is 100%.
   Color get sat300 => _modifySaturation(0.30);
 
-  /// 35% More Saturated Variant of Original Color.
-  ///
-  /// Maximum Saturation is 100%.
   Color get sat350 => _modifySaturation(0.35);
 
-  /// 40% More Saturated Variant of Original Color.
-  ///
-  /// Maximum Saturation is 100%.
   Color get sat400 => _modifySaturation(0.40);
 
-  /// 5% Less Saturated Variant of Original Color.
-  ///
-  /// Minimum Saturation is 0% (Grey).
   Color get desat50 => _modifySaturation(-0.05);
 
-  /// 10% Less Saturated Variant of Original Color.
-  ///
-  /// Minimum Saturation is 0% (Grey).
   Color get desat100 => _modifySaturation(-0.10);
 
-  /// 15% Less Saturated Variant of Original Color.
-  ///
-  /// Minimum Saturation is 0% (Grey).
   Color get desat150 => _modifySaturation(-0.15);
 
-  /// 20% Less Saturated Variant of Original Color.
-  ///
-  /// Minimum Saturation is 0% (Grey).
   Color get desat200 => _modifySaturation(-0.20);
 
-  /// 25% Less Saturated Variant of Original Color.
-  ///
-  /// Minimum Saturation is 0% (Grey).
   Color get desat250 => _modifySaturation(-0.25);
 
-  /// 30% Less Saturated Variant of Original Color.
-  ///
-  /// Minimum Saturation is 0% (Grey).
   Color get desat300 => _modifySaturation(-0.30);
 
-  /// 35% Less Saturated Variant of Original Color.
-  ///
-  /// Minimum Saturation is 0% (Grey).
   Color get desat350 => _modifySaturation(-0.35);
 
-  /// 40% Less Saturated Variant of Original Color.
-  ///
-  /// Minimum Saturation is 0% (Grey).
   Color get desat400 => _modifySaturation(-0.40);
 
   /// Modifies the lightness value of this color by the specified [light] amount.
