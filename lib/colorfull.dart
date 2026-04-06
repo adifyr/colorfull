@@ -45,7 +45,7 @@ extension ColorUtils on Color {
   /// Returns a new color with the specified [opacity].
   ///
   /// Valid values for [opacity] are in the range of 0.0-1.0.
-  Color operator *(final double opacity) {
+  Color operator *(double opacity) {
     return withValues(alpha: opacity);
   }
 
@@ -53,7 +53,12 @@ extension ColorUtils on Color {
   ///
   /// RGBA values will be in the range of 0-255. Example: (242, 90, 120, 255)
   (int, int, int, int) getRGBA() {
-    return ((r * 255).round() & 0xff, (g * 255).round() & 0xff, (b * 255).round() & 0xff, (a * 255).round() & 0xff);
+    return (
+      (r * 255).round() & 0xff,
+      (g * 255).round() & 0xff,
+      (b * 255).round() & 0xff,
+      (a * 255).round() & 0xff,
+    );
   }
 
   /// Returns the Hex Code [String] for this color. Example: #A38B29.
@@ -61,6 +66,18 @@ extension ColorUtils on Color {
   /// If [includeHash] is 'true', the Hex Code will be prefixed by "#". [includeHash] is 'true' by default.
   String getHex([bool includeHash = true]) {
     return '${includeHash ? '#' : ''}${toARGB32().toRadixString(16).padLeft(8, '0').substring(2).toUpperCase()}';
+  }
+
+  /// Returns a shade variant of this color based on the supplied [shade].
+  ///
+  /// The [shade] must be a multiple of 50 and in the range 50..950.
+  Color operator [](int shade) {
+    if (shade % 50 != 0) {
+      throw Exception('Shade must be in range 50..950 and a multiple of 50.');
+    }
+    return (_hsl[this] ??= HSLColor.fromColor(
+      this,
+    )).withLightness(shade.clamp(50, 950) / 100).toColor();
   }
 
   /// 5% Lighter Variant of Original Color.
