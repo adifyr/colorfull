@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/painting.dart';
 
 export 'src/colors/amber.dart';
@@ -51,12 +53,7 @@ extension ColorUtils on Color {
   ///
   /// RGBA values will be in the range of 0-255. Example: (242, 90, 120, 255)
   (int, int, int, int) getRGBA() {
-    return (
-      (r * 255).round() & 0xff,
-      (g * 255).round() & 0xff,
-      (b * 255).round() & 0xff,
-      (a * 255).round() & 0xff,
-    );
+    return ((r * 255).round() & 0xff, (g * 255).round() & 0xff, (b * 255).round() & 0xff, (a * 255).round() & 0xff);
   }
 
   /// Returns the Hex Code [String] for this color. Example: #A38B29.
@@ -96,16 +93,6 @@ extension ColorUtils on Color {
   /// Maximum Lightness is 100% (White).
   Color get lighter300 => _modifyLightness(0.30);
 
-  /// 35% Lighter Variant of Original Color.
-  ///
-  /// Maximum Lightness is 100% (White).
-  Color get lighter350 => _modifyLightness(0.35);
-
-  /// 40% Lighter Variant of Original Color.
-  ///
-  /// Maximum Lightness is 100% (White).
-  Color get lighter400 => _modifyLightness(0.40);
-
   /// 5% Darker Variant of Original Color.
   ///
   /// Minimum Lightness is 0% (Black).
@@ -136,15 +123,16 @@ extension ColorUtils on Color {
   /// Minimum Lightness is 0% (Black).
   Color get darker300 => _modifyLightness(-0.30);
 
-  /// 35% Darker Variant of Original Color.
+  /// Gets the contrasting shade of a color by adjusting its lightness by 60% either way.
   ///
-  /// Minimum Lightness is 0% (Black).
-  Color get darker350 => _modifyLightness(-0.35);
-
-  /// 40% Darker Variant of Original Color.
-  ///
-  /// Minimum Lightness is 0% (Black).
-  Color get darker400 => _modifyLightness(-0.40);
+  /// Useful for ensuring the readability of text placed on top of this color.
+  Color get contrastColor {
+    final hsl = _hsl[this] ??= HSLColor.fromColor(this);
+    return switch (hsl.lightness) {
+      > 0.6 => hsl.withLightness(max(hsl.lightness - 0.6, 0.0)),
+      _ => hsl.withLightness(min(hsl.lightness + 0.6, 1.0)),
+    }.toColor();
+  }
 
   /// 5% More Saturated Variant of Original Color.
   ///
@@ -176,16 +164,6 @@ extension ColorUtils on Color {
   /// Maximum Saturation is 100%.
   Color get sat300 => _modifySaturation(0.30);
 
-  /// 35% More Saturated Variant of Original Color.
-  ///
-  /// Maximum Saturation is 100%.
-  Color get sat350 => _modifySaturation(0.35);
-
-  /// 40% More Saturated Variant of Original Color.
-  ///
-  /// Maximum Saturation is 100%.
-  Color get sat400 => _modifySaturation(0.40);
-
   /// 5% Less Saturated Variant of Original Color.
   ///
   /// Minimum Saturation is 0% (Grey).
@@ -216,15 +194,10 @@ extension ColorUtils on Color {
   /// Minimum Saturation is 0% (Grey).
   Color get desat300 => _modifySaturation(-0.30);
 
-  /// 35% Less Saturated Variant of Original Color.
+  /// Disabled (70% Less Saturated) Variant of Original Color.
   ///
-  /// Minimum Saturation is 0% (Grey).
-  Color get desat350 => _modifySaturation(-0.35);
-
-  /// 40% Less Saturated Variant of Original Color.
-  ///
-  /// Minimum Saturation is 0% (Grey).
-  Color get desat400 => _modifySaturation(-0.40);
+  /// Useful for the "disabled" state of a button or card.
+  Color get disabledColor => _modifySaturation(-0.70);
 
   /// Modifies the lightness value of this color by the specified [light] amount.
   ///

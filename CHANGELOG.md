@@ -1,3 +1,15 @@
+# 1.3.0
+
+### Changes
+
+- Deprecated `Swatch` class.
+- Moved all `Swatch` methods to the `ColorUtils` extension on `Color`. You can now use the getters for color variants from the color object.
+
+### New Features
+
+- Added `contrastColor` getter to the extension that returns the contrasting (60% lightness adjusted) variant of the color. Useful for the text color of a button.
+- Added `disabledColor` getter to the extension that returns a 70% less saturated variant of the color. Useful as the "disabled" state of a button.
+
 # 1.2.1
 
 ### Bug Fixes

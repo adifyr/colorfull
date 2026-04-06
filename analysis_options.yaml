@@ -2,5 +2,6 @@ include: package:flutter_lints/flutter.yaml
 analyzer:
   errors:
     avoid_print: ignore
+    deprecated_member_use_from_same_package: warning
 # Additional information about this file can be found at
 # https://dart.dev/guides/language/analysis-options
