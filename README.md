@@ -20,7 +20,7 @@ To see a live showcase of all available color palettes, please have a look at th
 - ⚡️ **Zero Dependencies**: Pure Dart/Flutter, no external dependencies.
 - 🖼️ **Perfect for Design Systems**: Build beautiful, consistent UIs with fine-grained color control.
 - 🌳 **Highly Tree-Shakeable**: Only the colors you use are included in your final app build, keeping your app size minimal.
-- ✏️ **Custom Swatches**: With our new `Swatch` class, you can now define custom swatches of your own!
+- ✏️ **Color Variants**: Get lighter, darker, saturated and desaturated variants of any color using built-in extension methods.
 
 ## Usage
 
@@ -55,41 +55,34 @@ final hex = amberH600.getHex(); // '#A38B29' String
 final faded = blueP350 * 0.5;   // Color (Blue P-350) with 50% opacity
 ```
 
-### Custom Swatches
+#### Color Variants
 
-You can now create your very own swatch from any base color using the `Swatch` class!
+Every `Color` supports built-in variant methods. You can derive lighter, darker, saturated, and desaturated variants of any color directly.
 
-`Swatch` extends Flutter's `Color` and accepts a 32-bit ARGB integer (the same value you pass to `Color`).
-From that base color the class generates a full HSL-based swatch: multiple saturation grades (A to S) and lightness shades (50 to 950).
-
-- Create a swatch from an ARGB `int` or from an existing `Color` using `color.toARGB32()`.
-- Access generated variants using the letter/number getters (for example `a300`, `k650`) or by shade map (if you just want to adjust the lightness) with the `[]` operator (for example `swatch[300]`).
-- Get lighter, darker, saturated and desaturated variants of your color using getters such as `.ligher100`, `.darker150`, `.sat50`, and `.desat250`.
-- Because `Swatch` extends `Color`, you can use it anywhere a `Color` is accepted.
+- Access shade variants using the `[]` operator (for example `color[300]`, `color[700]`). Shades must be multiples of 50 in the range 50–950.
+- Get lighter or darker variants using getters like `.lighter100`, `.lighter200`, `.darker150`, `.darker300`.
+- Get more or less saturated variants using getters like `.sat50`, `.sat200`, `.desat100`, `.desat250`.
+- Use `.contrastColor` to get a contrasting shade for readable text on top of a color.
+- Use `.disabledColor` to get a desaturated variant suitable for disabled UI states.
 
 Example:
 
 ```dart
 import 'package:colorfull/colorfull.dart';
 
-// Create a swatch from a literal ARGB value
-final brand = Swatch(0xFF0066CC);
-
-// Or create from an existing Color
-// final brand = Swatch(blue650.toARGB32());
-
-Container(
-  decoration: BoxDecoration(
-    color: brand.a200, // high-saturation, high-lightness variant
-    borderRadius: BorderRadius.circular(8.0),
-    border: Border.all(color: brand.darker150, width: 2.0), // color with 15% lower lightness.
-  ),
-  padding: const EdgeInsets.all(12),
-  child: Text('Brand', style: TextStyle(color: brand[900])), // dark variant with original saturation
-);
+void getExampleContainer() {
+  final brand = Color(0xFF0066CC);
+  return Container(
+    decoration: BoxDecoration(
+      color: brand.lighter100,  // 10% lighter variant
+      borderRadius: BorderRadius.circular(8.0),
+      border: Border.all(color: brand.darker150, width: 2.0), // 15% darker variant
+    ),
+    padding: const EdgeInsets.all(12),
+    child: Text('Brand', style: TextStyle(color: brand[900])), // dark shade variant
+  );
+}
 ```
-
-The `Swatch` class is deterministic and HSL-based, so the variants it generates are consistent with the rest of the package's palette. Use it when you want to derive a full, consistent color system from a single brand or base color.
 
 ## How The System Works
 
